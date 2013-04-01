@@ -1,1 +1,1 @@
--r {AST} -m markdown --protected
+-r README.YARD -m markdown --protected
