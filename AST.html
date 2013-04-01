@@ -86,7 +86,27 @@
 </dl>
 <div class="clear"></div>
 
-<h2>Defined Under Namespace</h2>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p><span class='object_link'><a href="" title="AST (module)">AST</a></span> is a library for manipulating abstract syntax trees.</p>
+
+<p>It embraces immutability; each AST node is inherently frozen at
+creation, and updating a child node requires recreating that node
+and its every parent, recursively.
+This is a design choice. It does create some pressure on
+garbage collector, but completely eliminates all concurrency
+and aliasing problems.</p>
+
+<p>See also <span class='object_link'><a href="AST/Node.html" title="AST::Node (class)">Node</a></span>, <span class='object_link'><a href="AST/Processor.html" title="AST::Processor (class)">Processor</a></span> and <span class='object_link'><a href="AST/Sexp.html" title="AST::Sexp (module)">Sexp</a></span> for additional
+recommendations and design patterns.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
 <p class="children">
   
     
@@ -110,7 +130,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Apr  2 01:35:53 2013 by
+  Generated on Tue Apr  2 01:44:54 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.5.2 (ruby-2.0.0).
 </div>
