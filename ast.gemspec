@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'ast'
-  s.version     = '1.0.1'
+  s.version     = '1.0.2'
   s.authors     = ["Peter Zotov"]
   s.email       = ["whitequark@whitequark.org"]
   s.homepage    = "http://github.com/whitequark/ast"
