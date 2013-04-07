@@ -1,4 +1,4 @@
-require_relative 'helper'
+require 'helper'
 
 describe AST::Node do
   extend AST::Sexp
@@ -9,7 +9,7 @@ describe AST::Node do
 
   before do
     @node = AST::Node.new(:node, [ 0, 1 ])
-    @metanode = MetaNode.new(:node, [ 0, 1 ], meta: 'value')
+    @metanode = MetaNode.new(:node, [ 0, 1 ], :meta => 'value')
   end
 
   it 'should have accessors for type and children' do
@@ -47,7 +47,7 @@ describe AST::Node do
     updated.type.should.equal @node.type
     updated.children.should.equal [1, 1]
 
-    updated = @metanode.updated(nil, nil, meta: 'other_value')
+    updated = @metanode.updated(nil, nil, :meta => 'other_value')
     updated.meta.should.equal 'other_value'
   end
 
@@ -109,10 +109,16 @@ describe AST::Node do
         should.equal s(:array, s(:integer, 1), s(:string, "foo"))
   end
 
-  it 'should not trigger a rubinius bug' do
-    bar = [ s(:bar, 1) ]
-    baz = s(:baz, 2)
-    s(:foo, *bar, baz).should.equal s(:foo, s(:bar, 1), s(:baz, 2))
+  begin
+    eval <<-CODE
+    it 'should not trigger a rubinius bug' do
+      bar = [ s(:bar, 1) ]
+      baz = s(:baz, 2)
+      s(:foo, *bar, baz).should.equal s(:foo, s(:bar, 1), s(:baz, 2))
+    end
+    CODE
+  rescue SyntaxError
+    # Running on 1.8, ignore.
   end
 end
 
@@ -169,11 +175,11 @@ describe AST::Processor do
   it 'should visit every node' do
     @processor.process(@ast).should.equal @ast
     @processor.counts.should.equal({
-      root:    1,
-      def:     1,
-      arglist: 1,
-      body:    1,
-      invoke:  2
+      :root    => 1,
+      :def     => 1,
+      :arglist => 1,
+      :body    => 1,
+      :invoke  => 2,
     })
   end
 
@@ -207,15 +213,15 @@ describe AST::Processor do
   end
 
   it 'should refuse to process non-nodes' do
-    -> { @processor.process(nil) }.should.raise NoMethodError, %r|to_ast|
-    -> { @processor.process([]) }.should.raise NoMethodError, %r|to_ast|
+    lambda { @processor.process(nil) }.should.raise NoMethodError, %r|to_ast|
+    lambda { @processor.process([]) }.should.raise NoMethodError, %r|to_ast|
   end
 
   it 'should allow to visit nodes with process_all(node)' do
     @processor.process_all s(:foo, s(:bar), s(:integer, 1))
     @processor.counts.should.equal({
-      bar:     1,
-      integer: 1,
+      :bar =>     1,
+      :integer => 1,
     })
   end
 end

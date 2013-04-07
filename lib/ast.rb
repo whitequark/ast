@@ -11,7 +11,7 @@
 # recommendations and design patterns.
 #
 module AST
-  require_relative "ast/node"
-  require_relative "ast/processor"
-  require_relative "ast/sexp"
+  require 'ast/node'
+  require 'ast/processor'
+  require 'ast/sexp'
 end
