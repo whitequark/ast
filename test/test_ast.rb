@@ -108,6 +108,12 @@ describe AST::Node do
     (node << s(:integer, 1) << s(:string, "foo")).
         should.equal s(:array, s(:integer, 1), s(:string, "foo"))
   end
+
+  it 'should not trigger a rubinius bug' do
+    bar = [ s(:bar, 1) ]
+    baz = s(:baz, 2)
+    s(:foo, *bar, baz).should.equal s(:foo, s(:bar, 1), s(:baz, 2))
+  end
 end
 
 describe AST::Processor do
