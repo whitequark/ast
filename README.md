@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/whitequark/ast.png?branch=master)](https://travis-ci.org/whitequark/ast)
 [![Code Climate](https://codeclimate.com/github/whitequark/ast.png)](https://codeclimate.com/github/whitequark/ast)
+[![Coverage Status](https://coveralls.io/repos/whitequark/ast/badge.png?branch=master)](https://coveralls.io/r/whitequark/ast)
 
 AST is a small library for working with immutable abstract syntax trees.
 
