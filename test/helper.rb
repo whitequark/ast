@@ -9,6 +9,9 @@ SimpleCov.start do
     SimpleCov::Formatter::HTMLFormatter,
     Coveralls::SimpleCov::Formatter
   ]
+
+  # Exclude the testsuite itself.
+  add_filter "/test/"
 end
 
 require 'ast'
