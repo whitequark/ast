@@ -212,8 +212,11 @@ describe AST::Processor do
     SEXP
   end
 
+  it 'should return nil if passed nil' do
+    @processor.process(nil).should == nil
+  end
+
   it 'should refuse to process non-nodes' do
-    lambda { @processor.process(nil) }.should.raise NoMethodError, %r|to_ast|
     lambda { @processor.process([]) }.should.raise NoMethodError, %r|to_ast|
   end
 

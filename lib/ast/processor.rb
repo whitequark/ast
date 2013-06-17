@@ -227,8 +227,10 @@ module AST
     # value of the handler is passed along.
     #
     # @param  [AST::Node, nil] node
-    # @return [AST::Node]
+    # @return [AST::Node, nil]
     def process(node)
+      return if node.nil?
+
       node = node.to_ast
 
       # Invoke a specific handler
