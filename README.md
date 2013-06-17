@@ -1,4 +1,4 @@
-# Parser
+# AST
 
 [![Build Status](https://travis-ci.org/whitequark/ast.png?branch=master)](https://travis-ci.org/whitequark/ast)
 [![Code Climate](https://codeclimate.com/github/whitequark/ast.png)](https://codeclimate.com/github/whitequark/ast)
