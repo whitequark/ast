@@ -380,7 +380,7 @@ evaluation before! The possibilites are endless. Have fun.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#process-instance_method" title="#process (instance method)">- (AST::Node) <strong>process</strong>(node) </a>
+      <a href="#process-instance_method" title="#process (instance method)">- (AST::Node<sup>?</sup>) <strong>process</strong>(node) </a>
     
 
     
@@ -485,11 +485,11 @@ evaluation before! The possibilites are endless. Have fun.</p>
       <pre class="lines">
 
 
-261
-262</pre>
+263
+264</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/processor.rb', line 261</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/processor.rb', line 263</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handler_missing'>handler_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -501,7 +501,7 @@ evaluation before! The possibilites are endless. Have fun.</p>
       <div class="method_details ">
   <h3 class="signature " id="process-instance_method">
   
-    - (<tt><span class='object_link'><a href="Node.html" title="AST::Node (class)">AST::Node</a></span></tt>) <strong>process</strong>(node) 
+    - (<tt><span class='object_link'><a href="Node.html" title="AST::Node (class)">AST::Node</a></span></tt><sup>?</sup>) <strong>process</strong>(node) 
   
 
   
@@ -542,7 +542,7 @@ value of the handler is passed along.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Node.html" title="AST::Node (class)">AST::Node</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Node.html" title="AST::Node (class)">AST::Node</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
@@ -570,12 +570,16 @@ value of the handler is passed along.</p>
 242
 243
 244
-245</pre>
+245
+246
+247</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/ast/processor.rb', line 231</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_process'>process</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
   <span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_to_ast'>to_ast</span>
 
   <span class='comment'># Invoke a specific handler
@@ -648,14 +652,14 @@ value of the handler is passed along.</p>
       <pre class="lines">
 
 
-251
-252
 253
 254
-255</pre>
+255
+256
+257</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/processor.rb', line 251</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/processor.rb', line 253</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_process_all'>process_all</span><span class='lparen'>(</span><span class='id identifier rubyid_nodes'>nodes</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_node'>node</span><span class='op'>|</span>
@@ -672,7 +676,7 @@ value of the handler is passed along.</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Apr  2 01:45:14 2013 by
+  Generated on Mon Jun 17 05:20:40 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.5.2 (ruby-2.0.0).
 </div>
