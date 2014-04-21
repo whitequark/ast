@@ -68,7 +68,20 @@ describe AST::Node do
     @node.to_ast.should.be.identical_to @node
   end
 
-  it 'should only use type and children in comparisons' do
+  it 'should only use type and children to compute #hash' do
+    @node.hash.should.equal(@node.type.hash ^ @node.children.hash ^ @node.class.hash)
+  end
+
+  it 'should only use type and children in #eql? comparisons' do
+    # Not identical but equivalent
+    @node.eql?(AST::Node.new(:node, [0, 1])).should.be.true
+    # Not identical and not equivalent
+    @node.eql?(AST::Node.new(:other, [0, 1])).should.be.false
+    # Not identical and not equivalent because of differend class
+    @node.eql?(@metanode).should.be.false
+  end
+
+  it 'should only use type and children in #== comparisons' do
     @node.should.equal @node
     @node.should.equal @metanode
     @node.should.not.equal :foo

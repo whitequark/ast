@@ -45,6 +45,10 @@ module AST
     # @return [Array]
     attr_reader :children
 
+    # Returns the precomputed hash value for this node
+    # @return [Fixnum]
+    attr_reader :hash
+
     # Constructs a new instance of Node.
     #
     # The arguments `type` and `children` are converted with `to_sym` and
@@ -59,7 +63,18 @@ module AST
 
       assign_properties(properties)
 
+      @hash = @type.hash ^ @children.hash ^ self.class.hash
+
       freeze
+    end
+
+    # Test if other object is equal to
+    # @param [Object] other
+    # @return [Boolean]
+    def eql?(other)
+      self.class.eql?(other.class)   &&
+      @type.eql?(other.type)         &&
+      @children.eql?(other.children)
     end
 
     # By default, each entry in the `properties` hash is assigned to
