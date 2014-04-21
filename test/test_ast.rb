@@ -69,7 +69,7 @@ describe AST::Node do
   end
 
   it 'should only use type and children to compute #hash' do
-    @node.hash.should.equal(@node.type.hash ^ @node.children.hash ^ @node.class.hash)
+    @node.hash.should.equal([@node.type, @node.children, @node.class].hash)
   end
 
   it 'should only use type and children in #eql? comparisons' do

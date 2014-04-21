@@ -63,7 +63,7 @@ module AST
 
       assign_properties(properties)
 
-      @hash = @type.hash ^ @children.hash ^ self.class.hash
+      @hash = [@type, @children, self.class].hash
 
       freeze
     end
