@@ -1,9 +1,10 @@
 Gem::Specification.new do |s|
   s.name        = 'ast'
   s.version     = '2.0.0'
+  s.license     = 'MIT'
   s.authors     = ["Peter Zotov"]
   s.email       = ["whitequark@whitequark.org"]
-  s.homepage    = "https://github.com/whitequark/ast"
+  s.homepage    = "https://whitequark.github.io/ast/"
   s.summary     = %q{A library for working with Abstract Syntax Trees.}
   s.description = s.summary
 
