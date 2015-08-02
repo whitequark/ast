@@ -7,8 +7,8 @@
 # garbage collector, but completely eliminates all concurrency
 # and aliasing problems.
 #
-# See also {AST::Node}, {AST::Processor} and {AST::Sexp} for additional
-# recommendations and design patterns.
+# See also {AST::Node}, {AST::Processor::Behavior} and {AST::Sexp} for
+# additional recommendations and design patterns.
 #
 module AST
   require 'ast/node'
