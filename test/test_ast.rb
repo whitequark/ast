@@ -64,6 +64,20 @@ describe AST::Node do
     ]).to_sexp.should.equal "(a :sym\n  (b\n    (node 0 1)\n    (node 0 1)))"
   end
 
+  it 'should format inspect correctly' do
+    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).inspect.should.equal "s(:a, :sym, [1, 2])"
+    AST::Node.new(:a, [ :sym,
+      AST::Node.new(:b, [ @node, @node ])
+    ]).inspect.should.equal "s(:a, :sym,\n  s(:b,\n    s(:node, 0, 1),\n    s(:node, 0, 1)))"
+  end
+
+  it 'should recreate inspect output' do
+    simple_node = AST::Node.new(:a, [ :sym, [ 1, 2 ] ])
+    eval(simple_node.inspect).should.equal simple_node
+    complex_node =  s(:a ,  :sym,  s(:b, s(:node,  0,  1),  s(:node,  0,  1)))
+    eval(complex_node.inspect).should.equal complex_node
+  end
+
   it 'should return self in to_ast' do
     @node.to_ast.should.be.identical_to @node
   end

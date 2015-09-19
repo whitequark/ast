@@ -211,7 +211,32 @@ module AST
 
       sexp
     end
-    alias :inspect :to_sexp
+
+    # Converts `self` to a s-expression ruby string.
+    # The code return will recreate the node, using the sexp module s()
+    #
+    # @param  [Integer] indent Base indentation level.
+    # @return [String]
+    def inspect(indent=0)
+      indented = "  " * indent
+      sexp = "#{indented}s(:#{@type}"
+
+      first_node_child = children.index do |child|
+        child.is_a?(Node) || child.is_a?(Array)
+      end || children.count
+
+      children.each_with_index do |child, idx|
+        if child.is_a?(Node) && idx >= first_node_child
+          sexp << ",\n#{child.inspect(indent + 1)}"
+        else
+          sexp << ", #{child.inspect}"
+        end
+      end
+
+      sexp << ")"
+
+      sexp
+    end
 
     # @return [AST::Node] self
     def to_ast
