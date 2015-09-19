@@ -226,11 +226,10 @@ module AST
       end || children.count
 
       children.each_with_index do |child, idx|
-        sexp << ", "
         if child.is_a?(Node) && idx >= first_node_child
-          sexp << "\n#{child.inspect(indent + 1)}"
+          sexp << ",\n#{child.inspect(indent + 1)}"
         else
-          sexp << " #{child.inspect}"
+          sexp << ", #{child.inspect}"
         end
       end
 

@@ -65,10 +65,10 @@ describe AST::Node do
   end
 
   it 'should format inspect correctly' do
-    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).inspect.should.equal "s(:a,  :sym,  [1, 2])"
+    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).inspect.should.equal "s(:a, :sym, [1, 2])"
     AST::Node.new(:a, [ :sym,
       AST::Node.new(:b, [ @node, @node ])
-    ]).inspect.should.equal "s(:a,  :sym, \n  s(:b, \n    s(:node,  0,  1), \n    s(:node,  0,  1)))"
+    ]).inspect.should.equal "s(:a, :sym,\n  s(:b,\n    s(:node, 0, 1),\n    s(:node, 0, 1)))"
   end
 
   it 'should recreate inspect output' do
