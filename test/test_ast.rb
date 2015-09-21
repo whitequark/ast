@@ -51,17 +51,20 @@ describe AST::Node do
     updated.meta.should.equal 'other_value'
   end
 
-  it 'should use fancy type in to_s' do
-    node = AST::Node.new(:ast_node)
-    node.to_s.should.equal '(ast-node ...)'
-  end
-
   it 'should format to_sexp correctly' do
     AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_sexp.should.equal '(a :sym [1, 2])'
     AST::Node.new(:a, [ :sym, @node ]).to_sexp.should.equal "(a :sym\n  (node 0 1))"
     AST::Node.new(:a, [ :sym,
       AST::Node.new(:b, [ @node, @node ])
     ]).to_sexp.should.equal "(a :sym\n  (b\n    (node 0 1)\n    (node 0 1)))"
+  end
+
+  it 'should format to_s correctly' do
+    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_s.should.equal '(a :sym [1, 2])'
+    AST::Node.new(:a, [ :sym, @node ]).to_s.should.equal "(a :sym\n  (node 0 1))"
+    AST::Node.new(:a, [ :sym,
+      AST::Node.new(:b, [ @node, @node ])
+    ]).to_s.should.equal "(a :sym\n  (b\n    (node 0 1)\n    (node 0 1)))"
   end
 
   it 'should format inspect correctly' do
