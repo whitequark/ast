@@ -80,7 +80,7 @@ module AST
     # By default, each entry in the `properties` hash is assigned to
     # an instance variable in this instance of Node. A subclass should define
     # attribute readers for such variables. The values passed in the hash
-    # are not frozen or whitelisted; such behavior can also be implemented\
+    # are not frozen or whitelisted; such behavior can also be implemented
     # by subclassing Node and overriding this method.
     #
     # @return [nil]
