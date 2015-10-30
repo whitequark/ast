@@ -30,6 +30,10 @@ describe AST::Node do
     @node.dup.should.equal? @node
   end
 
+  it 'should return self when cloning' do
+    @node.clone.should.equal? @node
+  end
+
   it 'should return an updated node, but only if needed' do
     @node.updated().should.be.identical_to @node
     @node.updated(:node).should.be.identical_to @node

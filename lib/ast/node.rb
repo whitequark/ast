@@ -104,6 +104,7 @@ module AST
     def dup
       self
     end
+    alias :clone :dup
 
     # Returns a new instance of Node where non-nil arguments replace the
     # corresponding fields of `self`.
