@@ -37,7 +37,7 @@ module AST
     #     require 'ast'
     #
     #     class ArithmeticsProcessor
-    #       include AST::Processor::Module
+    #       include AST::Processor::Mixin
     #       # This method traverses any binary operators such as (add)
     #       # or (multiply).
     #       def process_binary_op(node)
