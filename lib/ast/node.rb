@@ -195,13 +195,13 @@ module AST
 
       children.each_with_index do |child, idx|
         if child.is_a?(Node) && idx >= first_node_child
-          sexp << "\n#{child.to_sexp(indent + 1)}"
+          sexp += "\n#{child.to_sexp(indent + 1)}"
         else
-          sexp << " #{child.inspect}"
+          sexp += " #{child.inspect}"
         end
       end
 
-      sexp << ")"
+      sexp += ")"
 
       sexp
     end
@@ -223,13 +223,13 @@ module AST
 
       children.each_with_index do |child, idx|
         if child.is_a?(Node) && idx >= first_node_child
-          sexp << ",\n#{child.inspect(indent + 1)}"
+          sexp += ",\n#{child.inspect(indent + 1)}"
         else
-          sexp << ", #{child.inspect}"
+          sexp += ", #{child.inspect}"
         end
       end
 
-      sexp << ")"
+      sexp += ")"
 
       sexp
     end
