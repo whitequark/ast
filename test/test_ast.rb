@@ -56,11 +56,18 @@ describe AST::Node do
   end
 
   it 'should format to_sexp correctly' do
-    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_sexp.should.equal '(a :sym [1, 2])'
-    AST::Node.new(:a, [ :sym, @node ]).to_sexp.should.equal "(a :sym\n  (node 0 1))"
+    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_sexp.should.equal 's(:a,  :sym,  [1, 2])'
+    AST::Node.new(:a, [ :sym, @node ]).to_sexp.should.equal "s(:a,  :sym, \n  s(:node,  0,  1))"
     AST::Node.new(:a, [ :sym,
       AST::Node.new(:b, [ @node, @node ])
-    ]).to_sexp.should.equal "(a :sym\n  (b\n    (node 0 1)\n    (node 0 1)))"
+    ]).to_sexp.should.equal "s(:a,  :sym, \n  s(:b, \n    s(:node,  0,  1), \n    s(:node,  0,  1)))"
+  end
+
+  it 'should output equivalnet ruby code' do
+    simple_node = AST::Node.new(:a, [ :sym, [ 1, 2 ] ])
+    eval(simple_node.to_sexp).should.equal simple_node
+    complex_node =  s(:a ,  :sym,  s(:b, s(:node,  0,  1),  s(:node,  0,  1)))
+    eval(complex_node.to_sexp).should.equal complex_node
   end
 
   it 'should format to_s correctly' do
@@ -159,11 +166,6 @@ end
 describe AST::Processor do
   extend AST::Sexp
 
-  def have_sexp(text)
-    text = text.lines.map { |line| line.sub /^ +\|(.+)/, '\1' }.join.rstrip
-    lambda { |ast| ast.to_sexp == text }
-  end
-
   class MockProcessor < AST::Processor
     attr_reader :counts
 
@@ -222,14 +224,12 @@ describe AST::Processor do
       node.updated(:new_fancy_arglist)
     end
 
-    @processor.process(@ast).should have_sexp(<<-SEXP)
-    |(root
-    |  (def :func
-    |    (new-fancy-arglist :foo :bar)
-    |    (body
-    |      (invoke :puts "Hello world")))
-    |  (invoke :func))
-    SEXP
+    @processor.process(@ast).should ==  s(:root,
+                                          s(:def, :func,
+                                            s(:new_fancy_arglist, :foo, :bar),
+                                            s(:body,
+                                            s(:invoke, :puts, "Hello world"))),
+                                          s(:invoke, :func) )
   end
 
   it 'should build sexps' do
@@ -237,13 +237,8 @@ describe AST::Processor do
       s(:integer, 1),
       s(:multiply,
         s(:integer, 2),
-        s(:integer, 3))).should have_sexp(<<-SEXP)
-    |(add
-    |  (integer 1)
-    |  (multiply
-    |    (integer 2)
-    |    (integer 3)))
-    SEXP
+        s(:integer, 3))).inspect.should ==
+"s(:add, \n  s(:integer,  1), \n  s(:multiply, \n    s(:integer,  2), \n    s(:integer,  3)))"
   end
 
   it 'should return nil if passed nil' do

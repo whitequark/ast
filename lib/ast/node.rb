@@ -182,18 +182,21 @@ module AST
     end
 
     # Converts `self` to a pretty-printed s-expression.
+    # Using the Sexp module the output can be used as ruby code to
+    # generate the expressions (handy for tests)
     #
     # @param  [Integer] indent Base indentation level.
     # @return [String]
     def to_sexp(indent=0)
       indented = "  " * indent
-      sexp = "#{indented}(#{fancy_type}"
+      sexp = "#{indented}s(:#{@type}"
 
       first_node_child = children.index do |child|
         child.is_a?(Node) || child.is_a?(Array)
       end || children.count
 
       children.each_with_index do |child, idx|
+        sexp << ", "
         if child.is_a?(Node) && idx >= first_node_child
           sexp += "\n#{child.to_sexp(indent + 1)}"
         else
