@@ -177,9 +177,7 @@ module AST
     #     p value    # => (integer 1)
     #
     # @return [Array]
-    def to_a
-      children
-    end
+    alias to_a children
 
     # Converts `self` to a pretty-printed s-expression.
     #
