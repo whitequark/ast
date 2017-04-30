@@ -42,8 +42,18 @@ module AST
 
     # Returns the children of this node.
     # The returned value is frozen.
+    # This is very useful in order to decompose nodes
+    # concisely. For example:
+    #
+    #     node = s(:gasgn, :$foo, s(:integer, 1))
+    #     s
+    #     var_name, value = *node
+    #     p var_name # => :$foo
+    #     p value    # => (integer 1)
+    #
     # @return [Array]
     attr_reader :children
+    alias to_a children
 
     # Returns the precomputed hash value for this node
     # @return [Fixnum]
@@ -166,18 +176,6 @@ module AST
     end
 
     alias << append
-
-    # Returns {#children}. This is very useful in order to decompose nodes
-    # concisely. For example:
-    #
-    #     node = s(:gasgn, :$foo, s(:integer, 1))
-    #     s
-    #     var_name, value = *node
-    #     p var_name # => :$foo
-    #     p value    # => (integer 1)
-    #
-    # @return [Array]
-    alias to_a children
 
     # Converts `self` to a pretty-printed s-expression.
     #
