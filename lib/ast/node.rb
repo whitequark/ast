@@ -42,11 +42,10 @@ module AST
 
     # Returns the children of this node.
     # The returned value is frozen.
-    # This is very useful in order to decompose nodes
-    # concisely. For example:
+    # The to_a alias is useful for decomposing nodes concisely.
+    # For example:
     #
     #     node = s(:gasgn, :$foo, s(:integer, 1))
-    #     s
     #     var_name, value = *node
     #     p var_name # => :$foo
     #     p value    # => (integer 1)
