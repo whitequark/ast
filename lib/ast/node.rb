@@ -184,12 +184,8 @@ module AST
       indented = "  " * indent
       sexp = "#{indented}(#{fancy_type}"
 
-      first_node_child = children.index do |child|
-        child.is_a?(Node) || child.is_a?(Array)
-      end || children.count
-
-      children.each_with_index do |child, idx|
-        if child.is_a?(Node) && idx >= first_node_child
+      children.each do |child|
+        if child.is_a?(Node)
           sexp += "\n#{child.to_sexp(indent + 1)}"
         else
           sexp += " #{child.inspect}"
@@ -212,12 +208,8 @@ module AST
       indented = "  " * indent
       sexp = "#{indented}s(:#{@type}"
 
-      first_node_child = children.index do |child|
-        child.is_a?(Node) || child.is_a?(Array)
-      end || children.count
-
-      children.each_with_index do |child, idx|
-        if child.is_a?(Node) && idx >= first_node_child
+      children.each do |child|
+        if child.is_a?(Node)
           sexp += ",\n#{child.inspect(indent + 1)}"
         else
           sexp += ", #{child.inspect}"
