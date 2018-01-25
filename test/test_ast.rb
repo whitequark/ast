@@ -89,11 +89,11 @@ describe AST::Node do
     @node.to_ast.should.be.identical_to @node
   end
   
-  it 'should produce to_sexp_arr correctly' do
-    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_sexp_arr.should.equal [:a, :sym, [1, 2]]
+  it 'should produce to_sexp_array correctly' do
+    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_sexp_array.should.equal [:a, :sym, [1, 2]]
     AST::Node.new(:a, [ :sym,
       AST::Node.new(:b, [ @node, @node ])
-    ]).to_sexp_arr.should.equal [:a, :sym, [:b, [:node, 0, 1], [:node, 0, 1]]]
+    ]).to_sexp_array.should.equal [:a, :sym, [:b, [:node, 0, 1], [:node, 0, 1]]]
   end
 
   it 'should only use type and children to compute #hash' do
