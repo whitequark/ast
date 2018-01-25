@@ -232,7 +232,7 @@ module AST
     # and subsequent elements are the same representation of its children. 
     #
     # @return [Array<Symbol, [...Array]>]
-    def to_sexp_arr
+    def to_sexp_array
       children_sexp_arrs = children.map do |child|
         if child.is_a?(Node)
           child.to_sexp_array
