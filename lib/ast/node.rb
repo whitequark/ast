@@ -227,6 +227,21 @@ module AST
     def to_ast
       self
     end
+    
+    # Produces a machine-readable s-expression.
+    #
+    # @return [Array]
+    def to_json
+      children_json = children.map do |child|
+        if child.is_a?(Node)
+          child.to_json
+        else
+          child
+        end
+      end
+
+      [type.to_s, *children_json]
+    end
 
     protected
 
