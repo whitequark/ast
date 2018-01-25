@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'json'
-
 module AST
   # Node is an immutable class, instances of which represent abstract
   # syntax tree nodes. It combines semantic information (i.e. anything
@@ -234,7 +232,7 @@ module AST
     # and subsequent elements are the same representation of its children. 
     #
     # @return [Array<Symbol, [...Array]>]
-    def to_sexp_array
+    def to_sexp_arr
       children_sexp_arrs = children.map do |child|
         if child.is_a?(Node)
           child.to_sexp_array
@@ -244,13 +242,6 @@ module AST
       end
 
       [type, *children_sexp_arrs]
-    end
-    
-    # Produces a machine-readable s-expression.
-    #
-    # @return [String]
-    def to_json
-      JSON.generate(to_sexp_array)
     end
 
     protected
