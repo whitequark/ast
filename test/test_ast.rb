@@ -77,7 +77,7 @@ describe AST::Node do
       AST::Node.new(:b, [ @node, @node ])
     ]).inspect.should.equal "s(:a, :sym,\n  s(:b,\n    s(:node, 0, 1),\n    s(:node, 0, 1)))"
   end
-
+  
   it 'should recreate inspect output' do
     simple_node = AST::Node.new(:a, [ :sym, [ 1, 2 ] ])
     eval(simple_node.inspect).should.equal simple_node
@@ -87,6 +87,20 @@ describe AST::Node do
 
   it 'should return self in to_ast' do
     @node.to_ast.should.be.identical_to @node
+  end
+  
+  it 'should produce to_sexp_array correctly' do
+    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_sexp_array.should.equal [:a, :sym, [1, 2]]
+    AST::Node.new(:a, [ :sym,
+      AST::Node.new(:b, [ @node, @node ])
+    ]).to_sexp_array.should.equal [:a, :sym, [:b, [:node, 0, 1], [:node, 0, 1]]]
+  end
+  
+  it 'should format to_json correctly' do
+    AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_json.should.equal '["a","sym",[1,2]]'
+    AST::Node.new(:a, [ :sym,
+      AST::Node.new(:b, [ @node, @node ])
+    ]).to_json.should.equal '["a","sym",["b",["node",0,1],["node",0,1]]]'
   end
 
   it 'should only use type and children to compute #hash' do
