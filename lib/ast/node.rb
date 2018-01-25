@@ -227,6 +227,22 @@ module AST
     def to_ast
       self
     end
+    
+    # Converts `self` to an Array where the first element is the type as a Symbol,
+    # and subsequent elements are the same representation of its children. 
+    #
+    # @return [Array<Symbol, [...Array]>]
+    def to_sexp_array
+      children_sexp_arrs = children.map do |child|
+        if child.is_a?(Node)
+          child.to_sexp_array
+        else
+          child
+        end
+      end
+
+      [type, *children_sexp_arrs]
+    end
 
     protected
 
