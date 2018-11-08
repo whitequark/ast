@@ -1,12 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
   Class: AST::Node
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -15,9 +15,8 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  hasFrames = window.top.frames.main ? true : false;
+  pathId = "AST::Node";
   relpath = '../';
-  framesUrl = "../frames.html#!AST/Node.html";
 </script>
 
 
@@ -28,51 +27,48 @@
 
   </head>
   <body>
-    <div id="header">
-      <div id="menu">
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
   
     <a href="../_index.html">Index (N)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../AST.html" title="AST (module)">AST</a></span></span>
      &raquo; 
     <span class="title">Node</span>
   
-
-  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
-      <div id="search">
+        <div id="search">
   
     <a class="full_list_link" id="class_list_link"
         href="../class_list.html">
-      Class List
-    </a>
-  
-    <a class="full_list_link" id="method_list_link"
-        href="../method_list.html">
-      Method List
-    </a>
-  
-    <a class="full_list_link" id="file_list_link"
-        href="../file_list.html">
-      File List
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
     </a>
   
 </div>
-      <div class="clear"></div>
-    </div>
+        <div class="clear"></div>
+      </div>
 
-    <iframe id="search_frame"></iframe>
-
-    <div id="content"><h1>Class: AST::Node
+      <div id="content"><h1>Class: AST::Node
   
   
   
 </h1>
-
-<dl class="box">
+<div class="box_info">
   
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
       <span class="inheritName">Object</span>
       
         <ul class="fullTree">
@@ -83,21 +79,25 @@
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
       
-      </dd>
-    
+    </dd>
+  </dl>
   
-  
-    
-  
-    
+
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/ast/node.rb</dd>
   
-</dl>
-<div class="clear"></div>
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/ast/node.rb</dd>
+  </dl>
+  
+</div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
@@ -146,15 +146,17 @@ the codebase.</p>
 
 
 
-  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
   <ul class="summary">
     
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#children-instance_method" title="#children (instance method)">- (Array) <strong>children</strong> </a>
+      <a href="#children-instance_method" title="#children (instance method)">#<strong>children</strong>  &#x21d2; Array </a>
     
 
+    
+      (also: #to_a)
     
   </span>
   
@@ -180,7 +182,7 @@ the codebase.</p>
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#hash-instance_method" title="#hash (instance method)">- (Fixnum) <strong>hash</strong> </a>
+      <a href="#hash-instance_method" title="#hash (instance method)">#<strong>hash</strong>  &#x21d2; Fixnum </a>
     
 
     
@@ -208,7 +210,7 @@ the codebase.</p>
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#type-instance_method" title="#type (instance method)">- (Symbol) <strong>type</strong> </a>
+      <a href="#type-instance_method" title="#type (instance method)">#<strong>type</strong>  &#x21d2; Symbol </a>
     
 
     
@@ -241,7 +243,7 @@ the codebase.</p>
   
     <h2>
       Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
     <ul class="summary">
@@ -249,7 +251,7 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%3D%3D-instance_method" title="#== (instance method)">- (Boolean) <strong>==</strong>(other) </a>
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  &#x21d2; Boolean </a>
     
 
     
@@ -272,7 +274,7 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#append-instance_method" title="#append (instance method)">- (AST::Node) <strong>append</strong>(element) </a>
+      <a href="#append-instance_method" title="#append (instance method)">#<strong>append</strong>(element)  &#x21d2; AST::Node </a>
     
 
     
@@ -297,7 +299,7 @@ the codebase.</p>
         <li class="protected ">
   <span class="summary_signature">
     
-      <a href="#assign_properties-instance_method" title="#assign_properties (instance method)">- (nil) <strong>assign_properties</strong>(properties) </a>
+      <a href="#assign_properties-instance_method" title="#assign_properties (instance method)">#<strong>assign_properties</strong>(properties)  &#x21d2; nil </a>
     
 
     
@@ -320,7 +322,7 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#concat-instance_method" title="#concat (instance method)">- (AST::Node) <strong>concat</strong>(array) </a>
+      <a href="#concat-instance_method" title="#concat (instance method)">#<strong>concat</strong>(array)  &#x21d2; AST::Node </a>
     
 
     
@@ -345,9 +347,11 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#dup-instance_method" title="#dup (instance method)">- (Object) <strong>dup</strong> </a>
+      <a href="#dup-instance_method" title="#dup (instance method)">#<strong>dup</strong>  &#x21d2; Object </a>
     
 
+    
+      (also: #clone)
     
   </span>
   
@@ -368,7 +372,7 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#eql%3F-instance_method" title="#eql? (instance method)">- (Boolean) <strong>eql?</strong>(other) </a>
+      <a href="#eql%3F-instance_method" title="#eql? (instance method)">#<strong>eql?</strong>(other)  &#x21d2; Boolean </a>
     
 
     
@@ -391,7 +395,7 @@ the codebase.</p>
         <li class="protected ">
   <span class="summary_signature">
     
-      <a href="#fancy_type-instance_method" title="#fancy_type (instance method)">- (String) <strong>fancy_type</strong> </a>
+      <a href="#fancy_type-instance_method" title="#fancy_type (instance method)">#<strong>fancy_type</strong>  &#x21d2; String </a>
     
 
     
@@ -414,7 +418,7 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Node) <strong>initialize</strong>(type, children = [], properties = {}) </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(type, children = [], properties = {})  &#x21d2; Node </a>
     
 
     
@@ -439,7 +443,7 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_a-instance_method" title="#to_a (instance method)">- (Array) <strong>to_a</strong> </a>
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>(indent = 0)  &#x21d2; String </a>
     
 
     
@@ -453,7 +457,7 @@ the codebase.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Returns <span class='object_link'><a href="#children-instance_method" title="AST::Node#children (method)">#children</a></span>.</p>
+    <span class="summary_desc"><div class='inline'><p>Converts <code>self</code> to a s-expression ruby string.</p>
 </div></span>
   
 </li>
@@ -462,7 +466,7 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_ast-instance_method" title="#to_ast (instance method)">- (AST::Node) <strong>to_ast</strong> </a>
+      <a href="#to_ast-instance_method" title="#to_ast (instance method)">#<strong>to_ast</strong>  &#x21d2; AST::Node </a>
     
 
     
@@ -485,34 +489,11 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">- (String) <strong>to_s</strong> </a>
+      <a href="#to_sexp-instance_method" title="#to_sexp (instance method)">#<strong>to_sexp</strong>(indent = 0)  &#x21d2; String </a>
     
 
     
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>Converts <code>self</code> to a concise s-expression, omitting any children.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#to_sexp-instance_method" title="#to_sexp (instance method)">- (String) <strong>to_sexp</strong>(indent = 0) </a>
-    
-
-    
-      (also: #inspect)
+      (also: #to_s)
     
   </span>
   
@@ -533,7 +514,30 @@ the codebase.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#updated-instance_method" title="#updated (instance method)">- (AST::Node) <strong>updated</strong>(type = nil, children = nil, properties = nil) </a>
+      <a href="#to_sexp_array-instance_method" title="#to_sexp_array (instance method)">#<strong>to_sexp_array</strong>  &#x21d2; Array&lt;Symbol, [...Array]&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Converts <code>self</code> to an Array where the first element is the type as a Symbol, and subsequent elements are the same representation of its children.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#updated-instance_method" title="#updated (instance method)">#<strong>updated</strong>(type = nil, children = nil, properties = nil)  &#x21d2; AST::Node </a>
     
 
     
@@ -562,7 +566,7 @@ the codebase.</p>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="AST::Node (class)">Node</a></span></tt>) <strong>initialize</strong>(type, children = [], properties = {}) 
+    #<strong>initialize</strong>(type, children = [], properties = {})  &#x21d2; <tt><span class='object_link'><a href="" title="AST::Node (class)">Node</a></span></tt> 
   
 
   
@@ -592,18 +596,18 @@ your code does not expect the argument to be frozen, use <code>#dup</code>.</p>
       <pre class="lines">
 
 
-61
-62
-63
-64
-65
-66
-67
-68
-69</pre>
+72
+73
+74
+75
+76
+77
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_children'>children</span><span class='op'>=</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_properties'>properties</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@type</span><span class='comma'>,</span> <span class='ivar'>@children</span> <span class='op'>=</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='comma'>,</span> <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span>
@@ -629,16 +633,28 @@ your code does not expect the argument to be frozen, use <code>#dup</code>.</p>
       <div class="method_details first">
   <h3 class="signature first" id="children-instance_method">
   
-    - (<tt>Array</tt>) <strong>children</strong>  <span class="extras">(readonly)</span>
+    #<strong>children</strong>  &#x21d2; <tt>Array</tt>  <span class="extras">(readonly)</span>
   
 
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='to_a-instance_method'>to_a</span></span>
+    </span>
   
 
   
 </h3><div class="docstring">
   <div class="discussion">
     <p>Returns the children of this node.
-The returned value is frozen.</p>
+The returned value is frozen.
+The to_a alias is useful for decomposing nodes concisely.
+For example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='id identifier rubyid_s'>s</span><span class='lparen'>(</span><span class='symbol'>:gasgn</span><span class='comma'>,</span> <span class='symbol'>:$foo</span><span class='comma'>,</span> <span class='id identifier rubyid_s'>s</span><span class='lparen'>(</span><span class='symbol'>:integer</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_var_name'>var_name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='op'>*</span><span class='id identifier rubyid_node'>node</span>
+<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_var_name'>var_name</span> <span class='comment'># =&gt; :$foo
+</span><span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_value'>value</span>    <span class='comment'># =&gt; (integer 1)
+</span></code></pre>
 
 
   </div>
@@ -665,12 +681,12 @@ The returned value is frozen.</p>
       <pre class="lines">
 
 
-46
-47
-48</pre>
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_children'>children</span>
   <span class='ivar'>@children</span>
@@ -685,7 +701,7 @@ The returned value is frozen.</p>
       <div class="method_details ">
   <h3 class="signature " id="hash-instance_method">
   
-    - (<tt>Fixnum</tt>) <strong>hash</strong>  <span class="extras">(readonly)</span>
+    #<strong>hash</strong>  &#x21d2; <tt>Fixnum</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -720,12 +736,12 @@ The returned value is frozen.</p>
       <pre class="lines">
 
 
-50
-51
-52</pre>
+61
+62
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 61</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hash'>hash</span>
   <span class='ivar'>@hash</span>
@@ -740,7 +756,7 @@ The returned value is frozen.</p>
       <div class="method_details ">
   <h3 class="signature " id="type-instance_method">
   
-    - (<tt>Symbol</tt>) <strong>type</strong>  <span class="extras">(readonly)</span>
+    #<strong>type</strong>  &#x21d2; <tt>Symbol</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -775,12 +791,12 @@ The returned value is frozen.</p>
       <pre class="lines">
 
 
-41
-42
-43</pre>
+43
+44
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_type'>type</span>
   <span class='ivar'>@type</span>
@@ -800,7 +816,7 @@ The returned value is frozen.</p>
       <div class="method_details first">
   <h3 class="signature first" id="==-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>==</strong>(other) 
+    #<strong>==</strong>(other)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -836,20 +852,20 @@ The returned value is frozen.</p>
       <pre class="lines">
 
 
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149</pre>
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 139</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 151</span>
 
 <span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_equal?'>equal?</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
@@ -870,7 +886,7 @@ The returned value is frozen.</p>
       <div class="method_details ">
   <h3 class="signature " id="append-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="AST::Node (class)">AST::Node</a></span></tt>) <strong>append</strong>(element) 
+    #<strong>append</strong>(element)  &#x21d2; <tt><span class='object_link'><a href="" title="AST::Node (class)">AST::Node</a></span></tt> 
   
 
   
@@ -909,12 +925,12 @@ The returned value is frozen.</p>
       <pre class="lines">
 
 
-163
-164
-165</pre>
+175
+176
+177</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 163</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 175</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_append'>append</span><span class='lparen'>(</span><span class='id identifier rubyid_element'>element</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_updated'>updated</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='ivar'>@children</span> <span class='op'>+</span> <span class='lbracket'>[</span><span class='id identifier rubyid_element'>element</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -927,7 +943,7 @@ The returned value is frozen.</p>
       <div class="method_details ">
   <h3 class="signature " id="assign_properties-instance_method">
   
-    - (<tt>nil</tt>) <strong>assign_properties</strong>(properties)  <span class="extras">(protected)</span>
+    #<strong>assign_properties</strong>(properties)  &#x21d2; <tt>nil</tt>  <span class="extras">(protected)</span>
   
 
   
@@ -938,7 +954,7 @@ The returned value is frozen.</p>
     <p>By default, each entry in the <code>properties</code> hash is assigned to
 an instance variable in this instance of Node. A subclass should define
 attribute readers for such variables. The values passed in the hash
-are not frozen or whitelisted; such behavior can also be implemented\
+are not frozen or whitelisted; such behavior can also be implemented
 by subclassing Node and overriding this method.</p>
 
 
@@ -966,16 +982,16 @@ by subclassing Node and overriding this method.</p>
       <pre class="lines">
 
 
-87
-88
-89
-90
-91
-92
-93</pre>
+98
+99
+100
+101
+102
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_assign_properties'>assign_properties</span><span class='lparen'>(</span><span class='id identifier rubyid_properties'>properties</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_properties'>properties</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
@@ -992,7 +1008,7 @@ by subclassing Node and overriding this method.</p>
       <div class="method_details ">
   <h3 class="signature " id="concat-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="AST::Node (class)">AST::Node</a></span></tt>) <strong>concat</strong>(array) 
+    #<strong>concat</strong>(array)  &#x21d2; <tt><span class='object_link'><a href="" title="AST::Node (class)">AST::Node</a></span></tt> 
   
 
   
@@ -1031,12 +1047,12 @@ by subclassing Node and overriding this method.</p>
       <pre class="lines">
 
 
-154
-155
-156</pre>
+166
+167
+168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 166</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_concat'>concat</span><span class='lparen'>(</span><span class='id identifier rubyid_array'>array</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_updated'>updated</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='ivar'>@children</span> <span class='op'>+</span> <span class='id identifier rubyid_array'>array</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='rparen'>)</span>
@@ -1049,9 +1065,13 @@ by subclassing Node and overriding this method.</p>
       <div class="method_details ">
   <h3 class="signature " id="dup-instance_method">
   
-    - (<tt>Object</tt>) <strong>dup</strong> 
+    #<strong>dup</strong>  &#x21d2; <tt>Object</tt> 
   
 
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='clone-instance_method'>clone</span></span>
+    </span>
   
 
   
@@ -1090,12 +1110,12 @@ another one.</p>
       <pre class="lines">
 
 
-104
-105
-106</pre>
+115
+116
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dup'>dup</span>
   <span class='kw'>self</span>
@@ -1108,7 +1128,7 @@ another one.</p>
       <div class="method_details ">
   <h3 class="signature " id="eql?-instance_method">
   
-    - (<tt>Boolean</tt>) <strong>eql?</strong>(other) 
+    #<strong>eql?</strong>(other)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1158,14 +1178,14 @@ another one.</p>
       <pre class="lines">
 
 
-74
-75
-76
-77
-78</pre>
+85
+86
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_eql?'>eql?</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_eql?'>eql?</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rparen'>)</span>   <span class='op'>&amp;&amp;</span>
@@ -1180,7 +1200,7 @@ another one.</p>
       <div class="method_details ">
   <h3 class="signature " id="fancy_type-instance_method">
   
-    - (<tt>String</tt>) <strong>fancy_type</strong>  <span class="extras">(protected)</span>
+    #<strong>fancy_type</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(protected)</span>
   
 
   
@@ -1217,12 +1237,12 @@ nicely looking s-expressions.</p>
       <pre class="lines">
 
 
-228
-229
-230</pre>
+254
+255
+256</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 228</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 254</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fancy_type'>fancy_type</span>
   <span class='ivar'>@type</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>_</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1233,9 +1253,9 @@ nicely looking s-expressions.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="to_a-instance_method">
+  <h3 class="signature " id="inspect-instance_method">
   
-    - (<tt>Array</tt>) <strong>to_a</strong> 
+    #<strong>inspect</strong>(indent = 0)  &#x21d2; <tt>String</tt> 
   
 
   
@@ -1243,28 +1263,42 @@ nicely looking s-expressions.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Returns <span class='object_link'><a href="#children-instance_method" title="AST::Node#children (method)">#children</a></span>. This is very useful in order to decompose nodes
-concisely. For example:</p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='id identifier rubyid_s'>s</span><span class='lparen'>(</span><span class='symbol'>:gasgn</span><span class='comma'>,</span> <span class='symbol'>:$foo</span><span class='comma'>,</span> <span class='id identifier rubyid_s'>s</span><span class='lparen'>(</span><span class='symbol'>:integer</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_s'>s</span>
-<span class='id identifier rubyid_var_name'>var_name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='op'>*</span><span class='id identifier rubyid_node'>node</span>
-<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_var_name'>var_name</span> <span class='comment'># =&gt; :$foo
-</span><span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_value'>value</span>    <span class='comment'># =&gt; (integer 1)
-</span></code></pre>
+    <p>Converts <code>self</code> to a s-expression ruby string.
+The code return will recreate the node, using the sexp module s()</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>indent</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Base indentation level.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'>(<tt>Array</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1278,15 +1312,41 @@ concisely. For example:</p>
       <pre class="lines">
 
 
-186
-187
-188</pre>
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 186</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 209</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_to_a'>to_a</span>
-  <span class='id identifier rubyid_children'>children</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='id identifier rubyid_indent'>indent</span><span class='op'>=</span><span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_indented'>indented</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  </span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='id identifier rubyid_indent'>indent</span>
+  <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_indented'>indented</span><span class='embexpr_end'>}</span><span class='tstring_content'>s(:</span><span class='embexpr_beg'>#{</span><span class='ivar'>@type</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="AST::Node (class)">Node</a></span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>,\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='id identifier rubyid_indent'>indent</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_sexp'>sexp</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1296,7 +1356,7 @@ concisely. For example:</p>
       <div class="method_details ">
   <h3 class="signature " id="to_ast-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="AST::Node (class)">AST::Node</a></span></tt>) <strong>to_ast</strong> 
+    #<strong>to_ast</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="AST::Node (class)">AST::Node</a></span></tt> 
   
 
   
@@ -1335,12 +1395,12 @@ concisely. For example:</p>
       <pre class="lines">
 
 
-217
-218
-219</pre>
+227
+228
+229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 217</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 227</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_ast'>to_ast</span>
   <span class='kw'>self</span>
@@ -1351,67 +1411,14 @@ concisely. For example:</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="to_s-instance_method">
-  
-    - (<tt>String</tt>) <strong>to_s</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>Converts <code>self</code> to a concise s-expression, omitting any children.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-172
-173
-174</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 172</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
-  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_fancy_type'>fancy_type</span><span class='embexpr_end'>}</span><span class='tstring_content'> ...)</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="to_sexp-instance_method">
   
-    - (<tt>String</tt>) <strong>to_sexp</strong>(indent = 0) 
+    #<strong>to_sexp</strong>(indent = 0)  &#x21d2; <tt>String</tt> 
   
 
   
     <span class="aliases">Also known as:
-    <span class="names"><span id='inspect-instance_method'>inspect</span></span>
+    <span class="names"><span id='to_s-instance_method'>to_s</span></span>
     </span>
   
 
@@ -1466,47 +1473,39 @@ concisely. For example:</p>
       <pre class="lines">
 
 
+185
+186
+187
+188
+189
+190
+191
+192
+193
 194
 195
 196
 197
 198
 199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213</pre>
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 185</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_sexp'>to_sexp</span><span class='lparen'>(</span><span class='id identifier rubyid_indent'>indent</span><span class='op'>=</span><span class='int'>0</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_indented'>indented</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  </span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='id identifier rubyid_indent'>indent</span>
   <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_indented'>indented</span><span class='embexpr_end'>}</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_fancy_type'>fancy_type</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 
-  <span class='id identifier rubyid_first_node_child'>first_node_child</span> <span class='op'>=</span> <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span>
-    <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Node</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
-  <span class='kw'>end</span> <span class='op'>||</span> <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span>
-
-  <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='comma'>,</span> <span class='id identifier rubyid_idx'>idx</span><span class='op'>|</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Node</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_idx'>idx</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_first_node_child'>first_node_child</span>
-      <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_to_sexp'>to_sexp</span><span class='lparen'>(</span><span class='id identifier rubyid_indent'>indent</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="AST::Node (class)">Node</a></span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_to_sexp'>to_sexp</span><span class='lparen'>(</span><span class='id identifier rubyid_indent'>indent</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>else</span>
-      <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_sexp'>sexp</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
 
   <span class='id identifier rubyid_sexp'>sexp</span>
 <span class='kw'>end</span></pre>
@@ -1516,9 +1515,79 @@ concisely. For example:</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="to_sexp_array-instance_method">
+  
+    #<strong>to_sexp_array</strong>  &#x21d2; <tt>Array&lt;Symbol, [...Array]&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Converts <code>self</code> to an Array where the first element is the type as a Symbol,
+and subsequent elements are the same representation of its children.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Symbol, [...Array]&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 235</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_sexp_array'>to_sexp_array</span>
+  <span class='id identifier rubyid_children_sexp_arrs'>children_sexp_arrs</span> <span class='op'>=</span> <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="AST::Node (class)">Node</a></span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_to_sexp_array'>to_sexp_array</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_child'>child</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_children_sexp_arrs'>children_sexp_arrs</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="updated-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="AST::Node (class)">AST::Node</a></span></tt>) <strong>updated</strong>(type = nil, children = nil, properties = nil) 
+    #<strong>updated</strong>(type = nil, children = nil, properties = nil)  &#x21d2; <tt><span class='object_link'><a href="" title="AST::Node (class)">AST::Node</a></span></tt> 
   
 
   
@@ -1603,22 +1672,22 @@ yield <code>(foo)</code>.</p>
       <pre class="lines">
 
 
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133</pre>
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'lib/ast/node.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_updated'>updated</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_children'>children</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_properties'>properties</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new_type'>new_type</span>       <span class='op'>=</span> <span class='id identifier rubyid_type'>type</span>       <span class='op'>||</span> <span class='ivar'>@type</span>
@@ -1642,11 +1711,12 @@ yield <code>(foo)</code>.</p>
 
 </div>
 
-    <div id="footer">
-  Generated on Mon Apr 21 19:41:49 2014 by
+      <div id="footer">
+  Generated on Thu Nov  8 04:08:02 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.1).
+  0.9.12 (ruby-2.5.1).
 </div>
 
+    </div>
   </body>
 </html>
