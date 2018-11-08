@@ -23,7 +23,7 @@ module AST
     #     into a variable named `<string-literal>`,
     #   * `(load <string-literal>)`: loads value of a variable named
     #     `<string-literal>`,
-    #   * `(each <node> ...): computes each of the `<node>`s and
+    #   * `(each <node> ...)`: computes each of the `<node>`s and
     #     prints the result.
     #
     # All AST nodes have the same Ruby class, and therefore they don't
