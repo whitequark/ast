@@ -8,9 +8,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{A library for working with Abstract Syntax Trees.}
   s.description = s.summary
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files         = %w{LICENSE.MIT README.YARD.md} + Dir.glob("lib/**/*", File::FNM_DOTMATCH).reject { |f| File.directory?(f) }
   s.require_paths = ["lib"]
 
   s.add_development_dependency 'rake',                '~> 10.0'
