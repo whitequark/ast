@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.files         = %w{LICENSE.MIT README.YARD.md} + Dir.glob("lib/**/*", File::FNM_DOTMATCH).reject { |f| File.directory?(f) }
   s.require_paths = ["lib"]
 
-  s.add_development_dependency 'rake',                '~> 10.0'
+  s.add_development_dependency 'rake',                '~> 12.3'
 
   s.add_development_dependency 'bacon',               '~> 1.2'
   s.add_development_dependency 'bacon-colored_output'
