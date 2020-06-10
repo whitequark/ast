@@ -7,9 +7,17 @@ describe AST::Node do
     attr_reader :meta
   end
 
+  class SubclassNode < AST::Node
+    def initialize(*)
+      super
+      nil
+    end
+  end
+
   before do
     @node = AST::Node.new(:node, [ 0, 1 ])
     @metanode = MetaNode.new(:node, [ 0, 1 ], :meta => 'value')
+    @subclass_node = SubclassNode.new(:node, [ 0, 1 ])
   end
 
   it 'should have accessors for type and children' do
@@ -53,6 +61,12 @@ describe AST::Node do
 
     updated = @metanode.updated(nil, nil, :meta => 'other_value')
     updated.meta.should.equal 'other_value'
+  end
+
+  it 'returns updated node for subclasses that override constructor' do
+    updated = @subclass_node.updated(nil, [2])
+    updated.type.should.equal :node
+    updated.children.should.equal [2]
   end
 
   it 'should format to_sexp correctly' do

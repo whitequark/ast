@@ -140,7 +140,9 @@ module AST
           properties.nil?
         self
       else
-        original_dup.send :initialize, new_type, new_children, new_properties
+        copy = original_dup
+        copy.send :initialize, new_type, new_children, new_properties
+        copy
       end
     end
 
