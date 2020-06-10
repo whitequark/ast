@@ -18,9 +18,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'simplecov'
 
   s.add_development_dependency 'coveralls', '~> 0.8.23'
-  s.add_development_dependency 'json_pure' # for coveralls on 1.9.2
-  s.add_development_dependency 'mime-types', '~> 1.25' # for coveralls on 1.8.7
-  s.add_development_dependency 'rest-client', '~> 1.6.7' # 1.8.7
 
   s.add_development_dependency 'yard'
   s.add_development_dependency 'kramdown'
