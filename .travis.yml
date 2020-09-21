@@ -5,6 +5,10 @@ rvm:
   - 2.6.6
   - 2.7.1
   - jruby-9.1.15.0
+  - truffleruby-head
+matrix:
+  allow_failures:
+    - truffleruby-head
 
 before_install:
   - gem install bundler
