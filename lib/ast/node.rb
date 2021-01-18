@@ -246,6 +246,14 @@ module AST
       [type, *children_sexp_arrs]
     end
 
+    # Enables matching for Node, where type is the first element
+    # and the children are remaining items.
+    #
+    # @return [Array]
+    def deconstruct
+      [type, *children]
+    end
+
     protected
 
     # Returns `@type` with all underscores replaced by dashes. This allows

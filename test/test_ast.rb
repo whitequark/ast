@@ -175,6 +175,22 @@ describe AST::Node do
   rescue SyntaxError
     # Running on 1.8, ignore.
   end
+
+  begin
+    eval <<-CODE
+    it 'should be matchable' do
+      baz = s(:baz, s(:bar, 1), 2)
+      r = case baz
+      in [:baz, [:bar, val], Integer] then val
+      else
+        :no_match
+      end
+      r.should.equal 1
+    end
+    CODE
+  rescue SyntaxError
+    # Running on < 2.7, ignore.
+  end
 end
 
 describe AST::Processor do
