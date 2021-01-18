@@ -102,7 +102,7 @@ describe AST::Node do
   it 'should return self in to_ast' do
     @node.to_ast.should.be.identical_to @node
   end
-  
+
   it 'should produce to_sexp_array correctly' do
     AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_sexp_array.should.equal [:a, :sym, [1, 2]]
     AST::Node.new(:a, [ :sym,

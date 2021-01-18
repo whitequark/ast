@@ -229,9 +229,9 @@ module AST
     def to_ast
       self
     end
-    
+
     # Converts `self` to an Array where the first element is the type as a Symbol,
-    # and subsequent elements are the same representation of its children. 
+    # and subsequent elements are the same representation of its children.
     #
     # @return [Array<Symbol, [...Array]>]
     def to_sexp_array
