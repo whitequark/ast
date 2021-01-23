@@ -102,7 +102,7 @@ describe AST::Node do
   it 'should return self in to_ast' do
     @node.to_ast.should.be.identical_to @node
   end
-  
+
   it 'should produce to_sexp_array correctly' do
     AST::Node.new(:a, [ :sym, [ 1, 2 ] ]).to_sexp_array.should.equal [:a, :sym, [1, 2]]
     AST::Node.new(:a, [ :sym,
@@ -174,6 +174,22 @@ describe AST::Node do
     CODE
   rescue SyntaxError
     # Running on 1.8, ignore.
+  end
+
+  begin
+    eval <<-CODE
+    it 'should be matchable' do
+      baz = s(:baz, s(:bar, 1), 2)
+      r = case baz
+      in [:baz, [:bar, val], Integer] then val
+      else
+        :no_match
+      end
+      r.should.equal 1
+    end
+    CODE
+  rescue SyntaxError
+    # Running on < 2.7, ignore.
   end
 end
 
