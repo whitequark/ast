@@ -10,5 +10,32 @@ jobs:
   test:
     name: run tests
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_JOBS: 4
+      BUNDLE_RETRY: 3
+      CI: true
+      TRUFFLERUBYOPT: "--engine.Mode=latency"
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: ["2.4.10", "2.5.8", "2.6.6", "2.7.2", "3.0.0", "jruby-9.2"]
+        command: ["bundle exec rake test"]
+        include:
+          - ruby: "head"
+            command: "bundle exec rake test || true"
+          - ruby: "truffleruby"
+            command: "bundle exec rake test || true"
     steps:
-      - run: echo Success
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+
+      - name: bundle install
+        run: bundle install
+
+      - name: run tests
+        run: ${{ matrix.command }}
