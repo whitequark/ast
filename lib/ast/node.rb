@@ -57,7 +57,7 @@ module AST
     alias to_a children
 
     # Returns the precomputed hash value for this node
-    # @return [Fixnum]
+    # @return [Integer]
     attr_reader :hash
 
     # Constructs a new instance of Node.
