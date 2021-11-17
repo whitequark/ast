@@ -12,7 +12,7 @@ AST is a small library for working with immutable abstract syntax trees.
 
 ## Usage
 
-See the documentation at [GitHub](http://whitequark.github.com/ast/frames.html) or [rdoc.info](http://rdoc.info/gems/ast).
+See the documentation at [GitHub](http://whitequark.github.io/ast/frames.html) or [rdoc.info](http://rdoc.info/gems/ast).
 
 ## Contributing
 
