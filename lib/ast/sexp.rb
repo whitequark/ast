@@ -3,8 +3,8 @@ module AST
   # to define deeply nested ASTs from Ruby code, for example, in
   # tests. It should be used like this:
   #
-  #     describe YourLanguage::AST do
-  #       include Sexp
+  #     describe YourLanguage do
+  #       include ::AST::Sexp
   #
   #       it "should correctly parse expressions" do
   #         YourLanguage.parse("1 + 2 * 3").should ==
