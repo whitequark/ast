@@ -6,7 +6,7 @@ module AST
   #
   # @deprecated Use {AST::Processor::Mixin} instead.
   class Processor
-    require 'ast/processor/mixin'
+    require_relative 'processor/mixin'
     include Mixin
   end
 end
