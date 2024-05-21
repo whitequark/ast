@@ -35,7 +35,7 @@ jobs:
             command: "bundle exec rake test || true"
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: setup ruby
         uses: ruby/setup-ruby@v1
