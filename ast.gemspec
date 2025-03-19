@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'ast'
-  s.version     = '2.4.2'
+  s.version     = '2.4.3'
   s.license     = 'MIT'
   s.authors     = ["whitequark"]
   s.email       = ["whitequark@whitequark.org"]
