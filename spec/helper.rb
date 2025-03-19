@@ -1,6 +1,3 @@
-require 'bacon'
-require 'bacon/colored_output'
-
 require 'simplecov'
 require 'coveralls'
 
