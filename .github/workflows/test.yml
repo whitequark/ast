@@ -27,12 +27,12 @@ jobs:
           - '3.3'
           - jruby-9.2
           - jruby-9.4
-        command: ["bundle exec rake test"]
+        command: ["bundle exec rake spec"]
         include:
           - ruby: "head"
-            command: "bundle exec rake test || true"
+            command: "bundle exec rake spec || true"
           - ruby: "truffleruby"
-            command: "bundle exec rake test || true"
+            command: "bundle exec rake spec || true"
     steps:
       - name: checkout
         uses: actions/checkout@v4

@@ -1,11 +1,13 @@
 require 'bundler/gem_tasks'
 require 'bundler/setup'
+require 'rspec/core'
+require 'rspec/core/rake_task'
 
-task :default => :test
+task :default => :spec
 
 desc "Run test suite"
-task :test do
-  sh "bacon -Itest -a"
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.verbose = true
 end
 
 PAGES_REPO = 'git@github.com:whitequark/ast'
