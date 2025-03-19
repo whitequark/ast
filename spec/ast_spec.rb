@@ -1,7 +1,7 @@
 require 'helper'
 
 RSpec.describe AST::Node do
-  extend AST::Sexp
+  include AST::Sexp
 
   class MetaNode < AST::Node
     attr_reader :meta
@@ -100,22 +100,17 @@ RSpec.describe AST::Node do
     expect(b).to eq "s(:a, :sym,\n  s(:b,\n    s(:node, 0, 1),\n    s(:node, 0, 1)))"
   end
 
-  context do
+  it 'should recreate inspect output' do
     simple_node = AST::Node.new(:a, [ :sym, [ 1, 2 ] ])
     a = eval(simple_node.inspect)
 
-    it 'should recreate inspect output' do
-      expect(a).to eq simple_node
-    end
+    expect(a).to eq simple_node
   end
 
-  context do
+  it 'should recreate inspect output' do
     complex_node =  s(:a ,  :sym,  s(:b, s(:node,  0,  1),  s(:node,  0,  1)))
     b = eval(complex_node.inspect)
-
-    it 'should recreate inspect output' do
-      expect(b).to eq complex_node
-    end
+    expect(b).to eq complex_node
   end
 
   it 'should return self in to_ast' do
@@ -165,77 +160,54 @@ RSpec.describe AST::Node do
     expect(@node).to eq mock_node
   end
 
-  context do
+  it 'should allow to decompose nodes with a, b = *node' do
     node = s(:gasgn, :$foo, s(:integer, 1))
     var_name, value = *node
     expected = s(:integer, 1)
 
-    it 'should allow to decompose nodes with a, b = *node' do
-      expect(var_name).to eq :$foo
-      expect(value).to eq expected
-    end
+    expect(var_name).to eq :$foo
+    expect(value).to eq expected
   end
 
-  context do
+  it 'should concatenate with arrays' do
     node = s(:gasgn, :$foo)
     array = [s(:integer, 1)]
     expected = s(:gasgn, :$foo, s(:integer, 1))
 
-    it 'should concatenate with arrays' do
-      expect(node + array).to eq expected
-    end
+    expect(node + array).to eq expected
   end
 
-  context do
+  it 'should append elements' do
     node = s(:array)
     a = s(:integer, 1)
     b = s(:string, "foo")
     expected = s(:array, s(:integer, 1), s(:string, "foo"))
 
-    it 'should append elements' do
-      expect(node << a << b).to eq expected
-    end
+    expect(node << a << b).to eq expected
   end
 
-  begin
-    eval <<-CODE
-    context do
-      bar = [ s(:bar, 1) ]
-      baz = s(:baz, 2)
-      value = s(:foo, *bar, baz)
-      expected = s(:foo, s(:bar, 1), s(:baz, 2))
+  it 'should not trigger a rubinius bug' do
+    bar = [ s(:bar, 1) ]
+    baz = s(:baz, 2)
+    value = s(:foo, *bar, baz)
+    expected = s(:foo, s(:bar, 1), s(:baz, 2))
 
-      it 'should not trigger a rubinius bug' do
-        expect(value).to eq expected
-      end
-    end
-    CODE
-  rescue SyntaxError
-    # Running on 1.8, ignore.
+    expect(value).to eq expected
   end
 
-  begin
-    eval <<-CODE
-    context do
-      baz = s(:baz, s(:bar, 1), 2)
-
-      it 'should be matchable' do
-        r = case baz
-        in [:baz, [:bar, val], Integer] then val
-        else
-          :no_match
-        end
-        expect(r).to eq 1
-      end
+  it 'should be matchable' do
+    baz = s(:baz, s(:bar, 1), 2)
+    r = case baz
+    in [:baz, [:bar, val], Integer] then val
+    else
+      :no_match
     end
-    CODE
-  rescue SyntaxError
-    # Running on < 2.7, ignore.
+    expect(r).to eq 1
   end
 end
 
 describe AST::Processor do
-  extend AST::Sexp
+  include AST::Sexp
 
   def have_sexp(text)
     text = text.lines.map { |line| line.sub /^ +\|(.+)/, '\1' }.join.rstrip
@@ -310,21 +282,20 @@ describe AST::Processor do
     SEXP
   end
 
-  context do
+  it 'should build sexps' do
     a = s(:add,
       s(:integer, 1),
       s(:multiply,
         s(:integer, 2),
         s(:integer, 3)))
-    it 'should build sexps' do
-      expect(have_sexp(<<-SEXP).call(a)).to be true
-      |(add
-      |  (integer 1)
-      |  (multiply
-      |    (integer 2)
-      |    (integer 3)))
-      SEXP
-    end
+
+    expect(have_sexp(<<-SEXP).call(a)).to be true
+    |(add
+    |  (integer 1)
+    |  (multiply
+    |    (integer 2)
+    |    (integer 3)))
+    SEXP
   end
 
   it 'should return nil if passed nil' do
@@ -335,15 +306,12 @@ describe AST::Processor do
     expect { @processor.process([]) }.to raise_error NoMethodError, %r|to_ast|
   end
 
-  context do
+  it 'should allow to visit nodes with process_all(node)' do
     value = s(:foo, s(:bar), s(:integer, 1))
-
-    it 'should allow to visit nodes with process_all(node)' do
-      @processor.process_all value
-      expect(@processor.counts).to eq({
-        :bar =>     1,
-        :integer => 1,
-      })
-    end
+    @processor.process_all value
+    expect(@processor.counts).to eq({
+      :bar =>     1,
+      :integer => 1,
+    })
   end
 end
